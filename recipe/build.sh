@@ -1,6 +1,8 @@
 #!/bin/bash
 
-./configure --shared --prefix=$PREFIX
+export CFLAGS="-Doff64_t=off_t"
+
+./configure --64 --static --shared --prefix=$PREFIX
 
 make
 make check
