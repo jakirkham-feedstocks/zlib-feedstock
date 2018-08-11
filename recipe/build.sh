@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+export CC="${PREFIX}/bin/clang"
+export WASMFLAGS="-O3 -nostdlib -nostartfiles -Wl,--no-entry"
+export CFLAGS="${CFLAGS} ${WASMFLAGS}"
+export CXXFLAGS="${CXXFLAGS} ${WASMFLAGS}"
+
 export CFLAGS="${CFLAGS} -fPIC"
 export CXXFLAGS="${CXXFLAGS} -fPIC"
 
